@@ -11,19 +11,20 @@ Clone the repo to your desired location.
 
 `mkdir ~/gapps/repos`\
 `cd ~/gapps/repos`\
-`git clone https://github.com/gja22/dotfiles.git`
+`git clone https://github.com/gapps/dotfiles.git`
 
 ## Zsh Setup
 
 ```
 cd
-ln -s gja22/repos/dotfiles/zsh/zshrc .zshrc
-ln -s gja22/repos/dotfiles/zsh/zshrc.after .zshrc.after
+ln -s gapps/repos/dotfiles/zsh/zshrc .zshrc
+ln -s gapps/repos/dotfiles/zsh/zshrc.after .zshrc.after
 ```
 
 The zshrc.after file is an example file that is empty. This is the file you
 would create for your specific setup on this particular machine. It will contain
-configuration that you likely do not want leaking into the public domain.
+configuration that you likely do not want leaking into the public domain. And,
+obviously, you would create a symbolic link to your own file.
 
 ## Tmux Setup
 
@@ -47,8 +48,8 @@ use bash as the to execute utility scripts.
 
 ```
 cd
-ln -s gja22/repos/dotfiles/bash/bash_profile .bash_profile
-ln -s gja22/repos/dotfiles/bash/bashrc .bashrc
+ln -s gapps/repos/dotfiles/bash/bash_profile .bash_profile
+ln -s gapps/repos/dotfiles/bash/bashrc .bashrc
 ```
 
 ## Vim Configuration
@@ -63,7 +64,7 @@ A little setup for new machines:
 ```
 mkdir ~/.vim
 cd ~/.vim
-ln -s ~/gja22/dotfiles/vim/vimrc vimrc
+ln -s ~/gapps/repos/dotfiles/vim/vimrc vimrc
 mkdir backup
 mkdir colors
 mkdir -p pack/plugins/start
@@ -75,16 +76,16 @@ mkdir undo
 
 I use the following folder as a holding area for color themes:
 
-`mkdir ~/gja22/vim-color-schemes`
+`mkdir ~/gapps/repos/vim-color-schemes`
 
 Into which I clone color schemes (gruvbox is my current favorite):
 
-`cd ~/gja22/vim-color-schemes`\
+`cd ~/gapps/repos/vim-color-schemes`\
 `git clone https://github.com/gruvbox-community/gruvbox.git`
 
 And then copy the color theme to the Vim config directory:
 
-`cd ~/gja22/vim-color-schemes/gruvbox/colors`\
+`cd ~/gapps/repos/vim-color-schemes/gruvbox/colors`\
 `cp gruvbox.vim ~/.vim/colors/.`
 
 Now modify vimrc (this is already in my default vimrc file):
