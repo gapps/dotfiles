@@ -1,5 +1,7 @@
 # dotfiles
 
+Test commit
+
 My collection of configuration files.
 
 Not everything has made its way in here just yet, but it is happening (albeit
