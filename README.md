@@ -2,24 +2,61 @@
 
 My collection of configuration files.
 
-Test to make sure all ok after a botched transfer.
+Not everything has made its way in here just yet, but it is happening (albeit
+slowly).
 
 ## Installation
 
-Clone the repo to your desired location. I keep it in `~/gja22/dotfiles`.
+Clone the repo to your desired location.
 
-`mkdir ~/gja22`\
-`cd ~/gja22`\
+`mkdir ~/gapps/repos`\
+`cd ~/gapps/repos`\
 `git clone https://github.com/gja22/dotfiles.git`
 
-## Bash Configuration
+## Zsh Setup
 
-In your home directory run the following commands:
+```
+cd
+ln -s gja22/repos/dotfiles/zsh/zshrc .zshrc
+ln -s gja22/repos/dotfiles/zsh/zshrc.after .zshrc.after
+```
 
-`ln -s gja22/dotfiles/bash/bash_profile .bash_profile`\
-`ln -s gja22/dotfiles/bash/bashrc .bashrc`
+The zshrc.after file is an example file that is empty. This is the file you
+would create for your specific setup on this particular machine. It will contain
+configuration that you likely do not want leaking into the public domain.
+
+## Tmux Setup
+
+```
+cd ~/.config/
+ln -s ~/gapps/repos/dotfiles/tmux tmux
+```
+
+## Neovim Setup
+
+```
+cd ~/.config/
+ln -s ~/gapps/repos/dotfiles/nvim nvim
+```
+
+## Bash Setup
+
+I have not used the bash shell as an interactive shell for quite a while
+(basically since Apple stopped suporting it as the default on MacOS). I still
+use bash as the to execute utility scripts.
+
+```
+cd
+ln -s gja22/repos/dotfiles/bash/bash_profile .bash_profile
+ln -s gja22/repos/dotfiles/bash/bashrc .bashrc
+```
 
 ## Vim Configuration
+
+This Vim stuff is quite dated at this stage as I have predominately moved to
+Neovim.
+
+TODO: Clean this Vim section up.
 
 A little setup for new machines:
 
@@ -56,30 +93,6 @@ Now modify vimrc (this is already in my default vimrc file):
 syntax enable
 colorscheme gruvbox
 ```
-
-### Vim Packages
-
-Since Vim8 I have not used a package manager. Not sure that it was the smartest
-decision, but I now clone packages directly from GitHub.
-
-`cd ~/.vim/pack/plugins/start`\
-`git clone https://github.com/tpope/vim-commentary.git`
-
-You can read about the plugins I like
-[here](https://www.gja22.com/vim-plugins). 
-
-## Neovim Configuration
-
-```
-cd ~/.config/
-ln -s ~/gja22/dotfiles/nvim nvim
-```
-
-## tmux
-
-Setting up the `.tmux.conf` file.
-
-`ln -s ~/gja22/dotfiles/tmux/tmux.conf ~/.tmux.conf`
 
 ## License
 
