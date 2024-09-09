@@ -1,0 +1,94 @@
+# .zshrc is executed when the shell starts
+zsh --version
+echo "executing .zshrc"
+
+# Set the prompt
+# PS1='%# '
+PROMPT='%(?.%F{14}⏺.%F{9}⏺)%f %2~ $ '
+
+# Alias commands
+alias la='ls -aGF'                    #colorized output and hidden files
+alias ll='ls -lGF'                    #long listing, colorized output
+alias mkdir='mkdir -pv'	              #-p create intermediate dirs
+alias v='nvim'
+alias cp='cp -iv'                     #-i prompt to overwrite
+alias mv='mv -iv'                     #-i prompt to overwrite
+alias c='clear'
+alias p='pwd'
+alias ll='ls -sal'
+alias path='echo $PATH | tr ":" "\n"'
+alias tt='~/repos/dotfiles/tmux/tmux-sessionizer'
+alias reload='source ~/.zshrc'        #reload bach profile in current session
+
+alias gst='git status'
+
+# Git display options
+# this will display branches etc. inline rather than opening a new screen
+export LESS=-FRX
+# Update path
+export PATH=~/bin:/opt/homebrew/bin:~/go/bin:$PATH
+
+# Git display options
+# This will handle branch displays etc. inline rather than opening a file
+export LESS=-FRX
+
+# Load asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# Autoload zsh's `add-zsh-hook` and `vcs_info` functions
+# (-U autoload w/o substition, -z use zsh style)
+autoload -Uz add-zsh-hook vcs_info
+
+# Set prompt substitution so we can use the vcs_info_message variable
+setopt prompt_subst
+
+# Run the `vcs_info` hook to grab git info before displaying the prompt
+add-zsh-hook precmd vcs_info
+
+# Style the vcs_info message
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git*' formats '%b%u%c'
+# Format when the repo is in an action (merge, rebase, etc)
+zstyle ':vcs_info:git*' actionformats '%F{14}⏱ %*%f'
+zstyle ':vcs_info:git*' unstagedstr '*'
+zstyle ':vcs_info:git*' stagedstr '+'
+# This enables %u and %c (unstaged/staged changes) to work,
+# but can be slow on large repos
+zstyle ':vcs_info:*:*' check-for-changes true
+
+# Set the right prompt to the vcs_info message
+# RPROMPT='%F{8}⎇ ${vcs_info_msg_0_}'
+RPROMPT='%F{8}${vcs_info_msg_0_}'
+
+# AUTOCOMPLETION
+
+# initialize autocompletion
+autoload -U compinit && compinit
+
+# history setup
+setopt SHARE_HISTORY
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# autocompletion using arrow keys (based on history)
+# bindkey '\e[A' history-search-backward
+bindkey '\e[A' history-substring-search-up
+# bindkey '\e[B' history-search-forward
+bindkey '\e[B' history-substring-search-down
+
+# brew install zsh-history-substring-search
+# https://github.com/zsh-users/zsh-history-substring-search.git
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# brew install zsh-syntax-highlighting
+# https://github.com/zsh-users/zsh-syntax-highlighting.git
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# brew install zsh-autosuggestions
+# https://github.com/zsh-users/zsh-autosuggestions.git
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Load settings specific to this setup (if required).
+if [ -f ~/.zshrc.after ]; then . ~/.zshrc.after; fi

@@ -1,0 +1,17 @@
+# Base gitignore file
+# Useful starting point when creating a new Git repo
+
+# Mac finder stuff
+.DS_Store
+
+# Vim misc files
+*.swp
+*.swo
+
+# Jetbrains IDEs
+.idea/
+
+# nvim stuff
+nvim/plugin/
+nvim/spell/
+nvim/lua/.luarc.json
