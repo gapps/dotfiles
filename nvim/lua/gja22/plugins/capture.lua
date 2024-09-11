@@ -3,8 +3,9 @@ local nmap = function(keys, func, desc)
 end
 
 return {
-	"gja22/capture.nvim",
-	-- { dir = "~/work/capture.nvim/lua/capture/init.lua" },
+	-- use this is loading as pure plugin that you are not working on
+	-- "gja22/capture.nvim",
+	dir = "~/repos/capture.nvim/",
 	config = function()
 		nmap("<leader>zo", function()
 			require("capture").oneonone()
