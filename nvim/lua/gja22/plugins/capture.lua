@@ -22,5 +22,9 @@ return {
 		nmap("<leader>zw", function()
 			require("capture").weekly()
 		end, "Zettel weekly")
+		nmap("<leader>zs", function()
+			require("capture").spew()
+		end, "Zettel spewing")
+		nmap("<leader>zr", ":lua R('capture')<CR>", "Zettel reload")
 	end,
 }
