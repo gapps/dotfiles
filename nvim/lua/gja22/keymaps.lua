@@ -17,7 +17,7 @@ vim.g.mapleader = " "
 -- NORMAL MODE MAPPINGS --
 
 -- Windows, save, and quit
-nmap("<leader>w", ":w<cr>", "Write file")
+nmap("<leader>s", ":w<cr>", "Save file")
 nmap("<leader>q", ":q<cr>", "Quit")
 nmap("<leader>c", ":close<cr>", "Close window")
 nmap("<leader>o", ":only<cr>", "Only window")
@@ -49,7 +49,7 @@ nmap("N", "Nzz", "Find prev and center")
 -- Writing
 -- Redraw long lines to stay within width
 -- gq takes a text object, ip being inside paragraph
--- nmap("<leader>r", "gqip", "Redraw long lines")
+nmap("<leader>r", "gqip", "Redraw long lines")
 
 -- Better paste
 --keymap("v", "p", '"_dP', opts)
