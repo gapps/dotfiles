@@ -1,28 +1,52 @@
 #!/usr/bin/env bash
+# Inspiration: https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
+#
+# If a single parameter is passed in, that is used as the tmux session name and
+# is also passed to tmux as the starting directory. If the starting directory
+# does not exist the Tmux session will start in the root directory.
+#
+# If no parameters are passed in, fzf is used to select a repository as the base
+# for the Tmux session.
 
-# From: https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
-
+# Some useful shell stuff to remember:
+#   - `-z` returns true if the string is empty
+#   - `$#` is a special variable that expands to the number of arguments
+   
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    # selected=$(find ~/work ~/personal -mindepth 1 -maxdepth 1 -type d | fzf)
-    selected=$(find ~/repos -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/repos ~/notes -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
+# -z returns true if the string is empty
 if [[ -z $selected ]]; then
     exit 0
 fi
 
+# Change and periods in the name to underscores as Tmux does not handle periods
+# in the name of sessions
 selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
+# Tmux is not running and we are not in an active Tmux session
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
+    tmux new-session -ds $selected_name -c $selected -n editor
+    tmux new-window -dt $selected_name -n shell
+    tmux attach
     exit 0
 fi
 
+# Tmux is running
+
+# Create new session if it does not already exist
 if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected
+    tmux new-session -ds $selected_name -c $selected -n editor
+    tmux new-window -dt $selected_name -n shell 
 fi
 
-tmux switch-client -t $selected_name
+# Switch session if Tmux is active or attach if not
+if [[ -z $TMUX ]]; then
+    tmux attach -t $selected_name
+else
+    tmux switch-client -t $selected_name
+fi
