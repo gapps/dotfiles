@@ -17,7 +17,8 @@ vim.g.mapleader = " "
 -- NORMAL MODE MAPPINGS --
 
 -- Windows, save, and quit
-nmap("<leader>s", ":w<cr>", "Save file")
+-- nmap("<leader>w", ":echo 'disabled, use space-s instead'<CR>", "OLD Save file")
+nmap("<leader>w", ":w<cr>", "Save file")
 nmap("<leader>q", ":q<cr>", "Quit")
 nmap("<leader>c", ":close<cr>", "Close window")
 nmap("<leader>o", ":only<cr>", "Only window")
