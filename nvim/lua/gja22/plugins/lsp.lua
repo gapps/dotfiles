@@ -79,7 +79,7 @@ return {
 			html = {},
 			-- ts_ls = {},
 			ruby_lsp = {},
-			solargraph = {},
+			-- solargraph = {},
 			lua_ls = {
 				-- cmd = {...},
 				-- filetypes { ...},
