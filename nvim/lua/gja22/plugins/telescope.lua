@@ -63,6 +63,7 @@ return {
 			vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "Find Resume" })
 			vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = "Find Recent" })
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Search Buffers" })
+			vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "Search Buffers" })
 
 			vim.keymap.set("n", "<leader>/", function()
 				require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({

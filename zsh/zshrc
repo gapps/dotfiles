@@ -26,8 +26,7 @@ alias gst='git status'
 # this will display branches etc. inline rather than opening a new screen
 export LESS=-FRX
 # Update path
-export PATH=~/bin:/opt/homebrew/bin:~/go/bin:$PATH
-
+export PATH=~/bin:/opt/homebrew/opt/postgresql@16/bin:/opt/homebrew/sbin:/opt/homebrew/bin:~/go/bin:$PATH
 # Git display options
 # This will handle branch displays etc. inline rather than opening a file
 export LESS=-FRX

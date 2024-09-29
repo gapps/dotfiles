@@ -15,5 +15,10 @@ return { -- Autoformat
 			javascript = { { "prettierd", "prettier" } },
 			ruby = { "rubocop" },
 		},
+		formatters = {
+			rubocop = {
+				args = { "-a", "-f", "quiet", "--stderr", "--stdin", "$FILENAME" },
+			},
+		},
 	},
 }

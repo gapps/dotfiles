@@ -31,7 +31,7 @@ tmux_running=$(pgrep tmux)
 # Tmux is not running and we are not in an active Tmux session
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
     tmux new-session -ds $selected_name -c $selected -n editor
-    tmux new-window -dt $selected_name -n shell
+    tmux new-window -dt $selected_name -c $selected -n shell
     tmux attach
     exit 0
 fi
@@ -41,7 +41,7 @@ fi
 # Create new session if it does not already exist
 if ! tmux has-session -t=$selected_name 2> /dev/null; then
     tmux new-session -ds $selected_name -c $selected -n editor
-    tmux new-window -dt $selected_name -n shell 
+    tmux new-window -dt $selected_name -c $selected -n shell 
 fi
 
 # Switch session if Tmux is active or attach if not
