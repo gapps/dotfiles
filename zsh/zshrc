@@ -33,6 +33,7 @@ export LESS=-FRX
 
 # Load asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
 # Autoload zsh's `add-zsh-hook` and `vcs_info` functions
 # (-U autoload w/o substition, -z use zsh style)
@@ -60,7 +61,18 @@ zstyle ':vcs_info:*:*' check-for-changes true
 RPROMPT='%F{8}${vcs_info_msg_0_}'
 
 # AUTOCOMPLETION
-
+# Add all the extensions provided by Homebrew packages
+# I export fpath so I have access to the fpath value later if investigation is 
+# required.
+export fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+# Add extensions from the zsh-completions package
+# https://github.com/zsh-users/zsh-completions
+# this adds a ton of useful stuff, esp. Rails for me.
+# export fpath=(~/repos/zsh-completions/src $fpath)
+# This enables expansion in the middle of a line rather than only at the end.
+# Useful when using the prefix of a previous command without deleting to the
+# end of the line.
+bindkey "TAB" expand-or-complete-prefix
 # initialize autocompletion
 autoload -U compinit && compinit
 
