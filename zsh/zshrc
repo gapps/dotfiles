@@ -77,11 +77,13 @@ bindkey "TAB" expand-or-complete-prefix
 autoload -U compinit && compinit
 
 # history setup
-setopt SHARE_HISTORY
+HISTSIZE=5000
 HISTFILE=$HOME/.zhistory
-SAVEHIST=1000
-HISTSIZE=999
+SAVEHIST=5000
+HISTDUP=erase
+setopt SHARE_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
+
 
 # autocompletion using arrow keys (based on history)
 # bindkey '\e[A' history-search-backward

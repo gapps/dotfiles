@@ -1,3 +1,9 @@
-# Include configuration specific to this machine's setup in here.
-# Executed as the last step in initializing the environment.
+# Private configuration (stuff you do not want in a public repo)
+# This is a template to reference
+# Link to where you store this file from .zshrc.after 
+# ln -s ~/repos/scripts/zshrc.after ~/.zshrc.after
 echo "executing .zshrc.after"
+
+# Your stuff here
+
+echo "completed executing .zshrc.after"
