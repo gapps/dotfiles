@@ -7,15 +7,19 @@ echo "executing .zshrc"
 PROMPT='%(?.%F{14}⏺.%F{9}⏺)%f %2~ $ '
 
 # Alias commands
-alias la='ls -aGF'                    #colorized output and hidden files
-alias ll='ls -lGF'                    #long listing, colorized output
+alias l='eza'             # eza is ls replacement
+alias la='eza -a'         # hidden files
+alias ll='eza -l'         # long listing
+# alias la='ls -aGF'                    #colorized output and hidden files
+# alias ll='ls -lGF'                    #long listing, colorized output
+# alias ll='ls -sal'
+alias g='zoxide'
 alias mkdir='mkdir -pv'	              #-p create intermediate dirs
 alias v='nvim'
 alias cp='cp -iv'                     #-i prompt to overwrite
 alias mv='mv -iv'                     #-i prompt to overwrite
 alias c='clear'
 alias p='pwd'
-alias ll='ls -sal'
 alias path='echo $PATH | tr ":" "\n"'
 alias tt='~/repos/dotfiles/tmux/tmux-sessionizer'
 alias reload='source ~/.zshrc'        #reload bach profile in current session
