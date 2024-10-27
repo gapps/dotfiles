@@ -1,5 +1,8 @@
 # .zshrc is executed when the shell starts
+
+# This writes out the current zsh version to the screen
 zsh --version
+# This reminds me that this script is run
 echo "executing .zshrc"
 
 # Alias commands
@@ -19,12 +22,13 @@ alias path='echo $PATH | tr ":" "\n"'
 alias tt='~/repos/dotfiles/tmux/tmux-sessionizer'
 alias reload='source ~/.zshrc'        #reload bach profile in current session
 alias gst='git status'
+alias gcf='git cat-file -p '
+alias gl='git log --oneline --graph --parents -10'
+alias root='cd $(git rev-parse --show-toplevel)'
 
-# Git display options
-# this will display branches etc. inline rather than opening a new screen
-export LESS=-FRX
 # Update path
 export PATH=~/bin:/opt/homebrew/opt/postgresql@16/bin:/opt/homebrew/sbin:/opt/homebrew/bin:~/go/bin:$PATH
+
 # Git display options
 # This will handle branch displays etc. inline rather than opening a file
 export LESS=-FRX
@@ -33,35 +37,7 @@ export LESS=-FRX
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
-# Autoload zsh's `add-zsh-hook` and `vcs_info` functions
-# (-U autoload w/o substition, -z use zsh style)
-autoload -Uz add-zsh-hook vcs_info
-
-# Set prompt substitution so we can use the vcs_info_message variable
-setopt prompt_subst
-
-# Run the `vcs_info` hook to grab git info before displaying the prompt
-add-zsh-hook precmd vcs_info
-
-# Style the vcs_info message
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git*' formats '%b%u%c'
-# Format when the repo is in an action (merge, rebase, etc)
-zstyle ':vcs_info:git*' actionformats '%F{14}⏱ %*%f'
-zstyle ':vcs_info:git*' unstagedstr '*'
-zstyle ':vcs_info:git*' stagedstr '+'
-# This enables %u and %c (unstaged/staged changes) to work,
-# but can be slow on large repos
-zstyle ':vcs_info:*:*' check-for-changes true
-
-# Prompt Stuff
-# Set the prompt
-# PS1='%# '
-# PROMPT='%(?.%F{14}⏺.%F{9}⏺)%f %2~%F{8}(${vcs_info_msg_0_}) %f$ '
-# Set the right prompt to the vcs_info message
-# RPROMPT='%F{8}⎇ ${vcs_info_msg_0_}'
-# RPROMPT='%F{8}${vcs_info_msg_0_}'
-#
+# Prompt configuration
 # https://github.com/spaceship-prompt/spaceship-prompt
 # https://spaceship-prompt.sh/
 # config in ~/.config/spaceship.zsh
@@ -109,7 +85,7 @@ source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring
 
 # brew install zsh-syntax-highlighting
 # https://github.com/zsh-users/zsh-syntax-highlighting.git
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # brew install zsh-autosuggestions
 # https://github.com/zsh-users/zsh-autosuggestions.git
