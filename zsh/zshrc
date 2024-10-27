@@ -21,8 +21,8 @@ alias p='pwd'
 alias path='echo $PATH | tr ":" "\n"'
 alias tt='~/repos/dotfiles/tmux/tmux-sessionizer'
 alias reload='source ~/.zshrc'        #reload bach profile in current session
-alias gst='git status'
-alias gcf='git cat-file -p '
+alias gs='git status'
+alias gc='git cat-file -p '
 alias gl='git log --oneline --graph --parents -10'
 alias root='cd $(git rev-parse --show-toplevel)'
 
