@@ -51,7 +51,7 @@ return {
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help" })
 			vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Find Keymaps" })
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
-			vim.keymap.set("n", "<leader>v", builtin.find_files, { desc = "Find Files" })
+			-- vim.keymap.set("n", "<leader>v", builtin.find_files, { desc = "Find Files" })
 			-- vim.keymap.set("n", "<leader>fz", function()
 			vim.keymap.set("n", "<leader>fs", function()
 				require("telescope.builtin").find_files({ find_command = { "rg", "--files", "--sortr", "path" } })

@@ -14,6 +14,9 @@ return { -- Autoformat
 			-- Use a sub-list to run only the first available formatter
 			javascript = { { "prettierd", "prettier" } },
 			ruby = { "rubocop" },
+			tf = { "terraform" },
+			-- have not figured out hcl file formatting yet
+			-- hcl = { "terraform" },
 		},
 		formatters = {
 			rubocop = {

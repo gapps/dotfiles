@@ -29,6 +29,10 @@ alias root='cd $(git rev-parse --show-toplevel)'
 # Update path
 export PATH=~/bin:/opt/homebrew/opt/postgresql@16/bin:/opt/homebrew/sbin:/opt/homebrew/bin:~/go/bin:$PATH
 
+# Set the system editor. This is used by a variety or system tools.
+export EDITOR=nvim
+export VISUAL="$EDITOR"
+
 # Git display options
 # This will handle branch displays etc. inline rather than opening a file
 export LESS=-FRX

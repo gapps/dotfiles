@@ -6,11 +6,18 @@ return {
 	"rose-pine/neovim",
 	"sainnhe/sonokai",
 	{
-		"rebelot/kanagawa.nvim",
+		"habamax/vim-habamax",
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("kanagawa")
+			vim.cmd.colorscheme("habamax")
 		end,
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		-- priority = 1000,
+		-- config = function()
+		-- 	vim.cmd.colorscheme("kanagawa")
+		-- end,
 	},
 	{
 		"folke/tokyonight.nvim",
