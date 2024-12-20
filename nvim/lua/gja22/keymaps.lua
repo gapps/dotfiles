@@ -23,13 +23,16 @@ nmap("<leader>q", ":q<cr>", "Quit")
 nmap("<leader>c", ":close<cr>", "Close window")
 nmap("<leader>o", ":only<cr>", "Only window")
 
+nmap("<left>", "<C-w>h", "Move to left window")
+nmap("<right>", "<C-w>l", "Move to right window")
+
 -- Toggling of various settings
 -- also <leader>ti is used to toggle the indentline plugin
 nmap("<leader>tr", ":set relativenumber!<CR>", "Toggle relativenumber")
 nmap("<leader>tw", ":set wrap!<CR>", "Toggle wrap")
 nmap("<leader>tn", ":set number!<CR>", "Toggle number")
 nmap("<leader>tl", ":set list!<CR>", "Toggle listchars")
-nmap("<leader>l", ":Neotree toggle<CR>", "Toggle file tree")
+nmap("<leader>s", ":Neotree toggle<CR>", "Toggle file tree")
 nmap("<leader>tt", function()
 	vim.cmd.split()
 	vim.cmd.term()
