@@ -12,19 +12,22 @@ local nmap = function(keys, func, desc)
 end
 
 --Space as my leader key
-vim.g.mapleader = " "
+-- vim.g.mapleader = " "
 
 -- NORMAL MODE MAPPINGS --
 
 -- Windows, save, and quit
 -- nmap("<leader>w", ":echo 'disabled, use space-s instead'<CR>", "OLD Save file")
-nmap("<leader>w", ":w<cr>", "Save file")
-nmap("<leader>q", ":q<cr>", "Quit")
-nmap("<leader>c", ":close<cr>", "Close window")
-nmap("<leader>o", ":only<cr>", "Only window")
+-- nmap("<leader>w", ":w<cr>", "Save file")
+-- nmap("<leader>q", ":q<cr>", "Quit")
+-- nmap("<leader>c", ":close<cr>", "Close window")
+-- nmap("<leader>o", ":only<cr>", "Only window")
 
-nmap("<left>", "<C-w>h", "Move to left window")
-nmap("<right>", "<C-w>l", "Move to right window")
+-- Use arrow keys to move between windows
+-- nmap("<left>", "<C-w>h", "Move to window on left")
+-- nmap("<down>", "<C-w>j", "Move to window below")
+-- nmap("<down>", "<C-w>k", "Move to window above")
+-- nmap("<right>", "<C-w>l", "Move to window on right ")
 
 -- Toggling of various settings
 -- also <leader>ti is used to toggle the indentline plugin
