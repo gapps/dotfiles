@@ -9,6 +9,7 @@
 --   https://github.com/VonHeikemen/nvim-starter
 --   https://dev.to/vonheikemen/lazynvim-plugin-configuration-3opi
 --   https://github.com/nvim-lua/kickstart.nvim
+--   https://www.youtube.com/@teej_dv
 --   https://www.youtube.com/@vhyrro
 --   https://www.youtube.com/@vimjoyer
 --
@@ -17,4 +18,5 @@
 -- Wander here at your own risk!
 
 -- Load my configuration
+print("I am here")
 require("gja22")
