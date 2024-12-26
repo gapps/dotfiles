@@ -18,5 +18,4 @@
 -- Wander here at your own risk!
 
 -- Load my configuration
-print("I am here")
 require("gja22")
