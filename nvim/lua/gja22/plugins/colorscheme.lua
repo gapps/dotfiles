@@ -1,18 +1,26 @@
 return {
-	"lunarvim/darkplus.nvim",
-	"gruvbox-community/gruvbox",
-	"navarasu/onedark.nvim",
-	"rose-pine/neovim",
-	"sainnhe/sonokai",
+	{
+		"catppuccin/nvim",
+		lazy = false,
+		enabled = true,
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("catppuccin-mocha")
+		end,
+	},
 	{
 		"rebelot/kanagawa.nvim",
-		-- priority = 1000,
-		-- config = function()
-		-- 	vim.cmd.colorscheme("kanagawa")
-		-- end,
+		lazy = false,
+		enabled = false,
+		priority = 1000,
+		config = function()
+			vim.cmd.colorscheme("kanagawa")
+		end,
 	},
 	{
 		"folke/tokyonight.nvim",
+		lazy = false,
+		enabled = false,
 		priority = 1000,
 		config = function()
 			vim.cmd.colorscheme("tokyonight-night")
