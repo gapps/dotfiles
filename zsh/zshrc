@@ -29,6 +29,10 @@ alias root='cd $(git rev-parse --show-toplevel)'
 # Update path
 export PATH=~/bin:/opt/homebrew/opt/postgresql@16/bin:/opt/homebrew/sbin:/opt/homebrew/bin:~/go/bin:$PATH
 
+# Set the command line mode
+# Emacs is the default, but this reminds me that it is set
+set -o emacs
+
 # Set the system editor. This is used by a variety or system tools.
 export EDITOR=nvim
 export VISUAL="$EDITOR"
@@ -45,6 +49,8 @@ export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 # https://github.com/spaceship-prompt/spaceship-prompt
 # https://spaceship-prompt.sh/
 # config in ~/.config/spaceship.zsh
+# extension that displays command line vi mode
+# source ~/repos/spaceship-vi-mode/spaceship-vi-mode.plugin.zsh
 source $(brew --prefix)/opt/spaceship/spaceship.zsh
 
 # AUTOCOMPLETION
