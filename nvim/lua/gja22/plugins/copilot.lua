@@ -1,44 +1,23 @@
--- return {
--- 	"github/copilot.vim",
--- 	-- enabled = false,
--- 	config = function()
--- 		vim.api.nvim_create_autocmd("VimEnter", {
--- 			desc = "Disable Copilot by default for new buffers",
--- 			command = "Copilot disable",
--- 		})
--- 	end,
--- }
--- return {
--- 	"zbirenbaum/copilot.lua",
--- 	cmd = "Copilot",
--- 	event = "InsertEnter",
--- 	config = function()
--- 		require("copilot").setup({})
--- 	end,
--- }
---
 return {
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = function()
-			require("copilot").setup({})
-		end,
-	},
-	{
-		"CopilotC-Nvim/CopilotChat.nvim",
-		branch = "main",
-		-- branch = "canary",
-		dependencies = {
-			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+	"zbirenbaum/copilot.lua",
+	cmd = "Copilot",
+	build = ":Copilot auth",
+	event = "InsertEnter",
+	opts = {
+		suggestion = {
+			enabled = not vim.g.ai_cmp,
+			auto_trigger = true,
+			keymap = {
+				-- accept = false, -- handled by nvim-cmp / blink.cmp
+				accept = "<Tab>",
+				next = "<M-]>",
+				prev = "<M-[>",
+			},
 		},
-		build = "make tiktoken", -- Only on MacOS or Linux
-		opts = {
-			debug = true, -- Enable debugging
-			-- See Configuration section for rest
+		panel = { enabled = false },
+		filetypes = {
+			markdown = true,
+			help = true,
 		},
-		-- See Commands section for default commands if you want to lazy load on them
 	},
 }

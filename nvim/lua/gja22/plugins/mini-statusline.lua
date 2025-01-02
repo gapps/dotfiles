@@ -3,6 +3,6 @@ return {
 	version = "*",
 	enabled = true,
 	config = function()
-		require("mini.statusline").setup()
+		require("mini.statusline").setup({ use_icons = true })
 	end,
 }

@@ -96,7 +96,8 @@ alt-comma = 'layout accordion horizontal vertical'
 alt-h = 'focus left'
 # I use alt-j for Contexts, alt-k also works as it loops nodes
 # alt-j = 'focus down'
-alt-k = 'focus up'
+# Wanted to use the following in Vim for move up
+# alt-k = 'focus up'
 alt-l = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
