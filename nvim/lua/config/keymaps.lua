@@ -1,32 +1,16 @@
-local nmap = function(keys, func, desc)
-	vim.keymap.set("n", keys, func, { desc = desc })
-end
-
-local imap = function(keys, func, desc)
-	vim.keymap.set("i", keys, func, { desc = desc })
-end
-
-local vmap = function(keys, func, desc)
-	vim.keymap.set("v", keys, func, { desc = desc })
-end
-
 --Space as my leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- nmap("<C-s>", ":w<cr>", "Save file")
-
 -- Toggling of various settings
+-- much of what used to be here is now covered by the mini.basics plugin
 -- also <leader>ti is used to toggle the indentline plugin
--- and <leader>tc is used to toggle CoPilot
-nmap("<leader>tr", ":set relativenumber!<CR>", "Toggle relativenumber")
-nmap("<leader>tw", ":set wrap!<CR>", "Toggle wrap")
-nmap("<leader>tl", ":set list!<CR>", "Toggle listchars")
-nmap("<leader>tn", ":set number!<CR>", "Toggle number")
-nmap("<leader>tt", function()
-	vim.cmd.split()
-	vim.cmd.term()
-end, "Toggle Terminal")
+-- also <leader>tu is used to toggle the undotree plugin
+-- also <leader>tb is used to toggle git blame for each line
+-- vim.keymap.set("n", "<leader>tt", function()
+-- 	vim.cmd.split()
+-- 	vim.cmd.term()
+-- end, { desc = "Toggle Terminal" })
 
 -- Leave insert mode in the terminal
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Exit terminal" })
@@ -40,21 +24,29 @@ vim.keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 vim.keymap.set("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
 vim.keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
--- use arrow keys to move between windows
-nmap("<C-h>", "<C-w>h", "Move to left window")
-nmap("<C-l>", "<C-w>l", "Move to right window")
+-- Move between windows
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 
 -- move cursor line to center of screen when scrolling down and up
-nmap("<C-d>", "<C-d>zz", "Scroll down and center")
-nmap("<C-u>", "<C-u>zz", "Scroll up and center")
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center" })
 
 -- move cursor line to center of screen when jumping to next search
-nmap("n", "nzz", "Find next and center")
-nmap("N", "Nzz", "Find prev and center")
+vim.keymap.set("n", "n", "nzz", { desc = "Find next and center" })
+vim.keymap.set("n", "N", "Nzz", { desc = "Find prev and center" })
 
 -- Redraw long lines to stay within width
 -- gq takes a text object, ip being inside paragraph
-nmap("<leader>r", "gqip", "Redraw long lines")
+vim.keymap.set("n", "<leader>r", "gqip", { desc = "Redraw long lines" })
 
 -- Better paste
 --keymap("v", "p", '"_dP', opts)
+
+-- These have been replaced by `\` mappings in mini.basics
+-- vim.keymap.set("n", "<leader>tr", ":set relativenumber!<CR>", { desc = "Toggle relativenumber" })
+-- vim.keymap.set("n", "<leader>tw", ":set wrap!<CR>", { desc = "Toggl}e wrap" })
+-- vim.keymap.set("n", "<leader>tl", ":set list!<CR>", { desc = "Toggle listchars" })
+-- vim.keymap.set("n", "<leader>tn", ":set number!<CR>", { desc = "Toggle number" })
