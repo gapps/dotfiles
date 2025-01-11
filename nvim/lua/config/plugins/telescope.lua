@@ -29,8 +29,8 @@ return {
 
 							["<Down>"] = require("telescope.actions").cycle_history_next,
 							["<Up>"] = require("telescope.actions").cycle_history_prev,
-							["<C-j>"] = require("telescope.actions").move_selection_next,
-							["<C-k>"] = require("telescope.actions").move_selection_previous,
+							-- ["<C-j>"] = require("telescope.actions").move_selection_next,
+							-- ["<C-k>"] = require("telescope.actions").move_selection_previous,
 							["<C-u>"] = false,
 							["<C-d>"] = false,
 						},
