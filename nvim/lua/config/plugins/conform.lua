@@ -1,5 +1,5 @@
 -- https://github.com/stevearc/conform.nvim
-return { -- Autoformat
+return {
 	"stevearc/conform.nvim",
 	opts = {},
 	config = function()
@@ -11,8 +11,7 @@ return { -- Autoformat
 			},
 			formatters_by_ft = {
 				ruby = { "rubocop" },
-				-- ruby = { "rufo" }, --rubocop, standardrb, rufo
-				-- eruby = { "erb_format" },
+				eruby = { "erb_format" },
 				go = { "goimports", "gofmt" },
 				lua = { "stylua" },
 				javascript = { "prettierd", "prettier", stop_after_first = true },
