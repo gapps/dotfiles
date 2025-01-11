@@ -3,13 +3,28 @@ return {
 	"lewis6991/gitsigns.nvim",
 	opts = {
 		signs = {
-			add = { text = "+" },
-			change = { text = "~" },
-			delete = { text = "_" },
-			topdelete = { text = "‾" },
-			changedelete = { text = "~" },
-			untracked = { text = "┆" },
+			add = { text = "▎" },
+			change = { text = "▎" },
+			delete = { text = "" },
+			topdelete = { text = "" },
+			changedelete = { text = "▎" },
+			untracked = { text = "▎" },
 		},
+		signs_staged = {
+			add = { text = "▎" },
+			change = { text = "▎" },
+			delete = { text = "" },
+			topdelete = { text = "" },
+			changedelete = { text = "▎" },
+		},
+		-- signs = {
+		-- 	add = { text = "+" },
+		-- 	change = { text = "~" },
+		-- 	delete = { text = "_" },
+		-- 	topdelete = { text = "‾" },
+		-- 	changedelete = { text = "~" },
+		-- 	untracked = { text = "┆" },
+		-- },
 		on_attach = function(bufnr)
 			local gs = package.loaded.gitsigns
 
@@ -52,7 +67,8 @@ return {
 			map("n", "<leader>hb", function()
 				gs.blame_line({ full = true })
 			end, { desc = "Hunk Blame (Git)" })
-			-- map('n', '<leader>tb', gs.toggle_current_line_blame)
+			-- map("n", "<leader>tb", gs.toggle_current_line_blame)
+			map("n", "\\g", gs.toggle_current_line_blame)
 			map("n", "<leader>hd", gs.diffthis, { desc = "Hunk Diff This (Git)" })
 			map("n", "<leader>hD", function()
 				gs.diffthis("~")
