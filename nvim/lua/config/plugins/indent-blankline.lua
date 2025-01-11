@@ -17,6 +17,7 @@ return {
 		},
 	},
 	config = function()
-		vim.keymap.set("n", "<leader>ti", "<cmd>IBLToggle<cr>", { silent = true, desc = "Toggle Indentline" })
+		-- vim.keymap.set("n", "<leader>ti", "<cmd>IBLToggle<cr>", { silent = true, desc = "Toggle Indentline" })
+		vim.keymap.set("n", "\\m", "<cmd>IBLToggle<cr>", { silent = true, desc = "Toggle Matching Indent" })
 	end,
 }
