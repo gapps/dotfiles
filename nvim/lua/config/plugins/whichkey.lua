@@ -29,7 +29,7 @@ return {
 			{ "<leader>f", group = "Find" },
 			{ "<leader>h", group = "Hunk" },
 			{ "<leader>g", group = "Git" },
-			{ "<leader>t", group = "Toggle" },
+			-- { "<leader>t", group = "Toggle" },
 		})
 	end,
 }
