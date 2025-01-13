@@ -37,7 +37,7 @@ return {
 				map("<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", "Error  Details")
 				-- map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type Definition")
 				-- map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "Document Symbols")
-				map("<leader>d", require("telescope.builtin").lsp_document_symbols, "Document Symbols")
+				-- map("<leader>d", require("telescope.builtin").lsp_document_symbols, "Document Symbols")
 				-- map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace Symbols")
 				-- map("<leader>w", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace Symbols")
 				map("<leader>cr", vim.lsp.buf.rename, "Rename")
