@@ -88,7 +88,15 @@ return {
 			cssls = {},
 			html = {},
 			-- ts_ls = {},
-			ruby_lsp = {},
+			-- ruby_lsp = {},
+			ruby_lsp = {
+				mason = false,
+				cmd = { vim.fn.expand("~/.asdf/shims/ruby-lsp") },
+			},
+			rubocop = {
+				mason = false,
+				cmd = { vim.fn.expand("~/.asdf/shims/rubocop"), "--lsp" },
+			},
 			-- solargraph = {},
 			lua_ls = {
 				-- cmd = {...},
