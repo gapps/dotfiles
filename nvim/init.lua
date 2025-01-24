@@ -12,6 +12,7 @@
 --   https://www.youtube.com/@teej_dv
 --   https://www.youtube.com/@vhyrro
 --   https://www.youtube.com/@vimjoyer
+--   https://github.com/LazyVim/LazyVim
 --
 -- All configuration files are a mess.
 -- Mine are no different.
@@ -19,4 +20,3 @@
 
 -- Load my configuration
 require("config")
--- require("gja22")
