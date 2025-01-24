@@ -103,3 +103,6 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Load settings specific to this setup (if required).
 if [ -f ~/.zshrc.after ]; then . ~/.zshrc.after; fi
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
