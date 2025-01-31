@@ -5,8 +5,8 @@ return {
 		local mark = require("harpoon.mark")
 		local ui = require("harpoon.ui")
 
-		vim.keymap.set("n", "<leader>p", mark.add_file, { desc = "Pin (Harpoon) a file" })
-		vim.keymap.set("n", "<leader>l", ui.toggle_quick_menu, { desc = "List Harpoon files" })
+		vim.keymap.set("n", "<C-h>", mark.add_file, { desc = "Pin (Harpoon) a file" })
+		vim.keymap.set("n", "<C-l>", ui.toggle_quick_menu, { desc = "List Harpoon files" })
 		vim.keymap.set("n", "<leader>1", function()
 			ui.nav_file(1)
 		end, { desc = "Harpoon file 1" })
