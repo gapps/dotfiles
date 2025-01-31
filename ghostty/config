@@ -1,3 +1,5 @@
 font-size=18
 copy-on-select=true
 theme=catppuccin-mocha
+macos-titlebar-style=tabs
+cursor-opacity=0.5
