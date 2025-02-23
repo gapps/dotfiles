@@ -29,8 +29,8 @@ return {
 
 							["<Down>"] = require("telescope.actions").cycle_history_next,
 							["<Up>"] = require("telescope.actions").cycle_history_prev,
-							-- ["<C-j>"] = require("telescope.actions").move_selection_next,
-							-- ["<C-k>"] = require("telescope.actions").move_selection_previous,
+							["<C-j>"] = require("telescope.actions").move_selection_next,
+							["<C-k>"] = require("telescope.actions").move_selection_previous,
 							["<C-u>"] = false,
 							["<C-d>"] = false,
 						},
@@ -52,6 +52,7 @@ return {
 			vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help" })
 			vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Find Keymaps" })
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
+			vim.keymap.set("n", "<C-f>", builtin.find_files, { desc = "Find Files" })
 			-- vim.keymap.set("n", "<leader>v", builtin.find_files, { desc = "Find Files" })
 			-- vim.keymap.set("n", "<leader>fz", function()
 			vim.keymap.set("n", "<leader>fs", function()
