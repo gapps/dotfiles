@@ -12,9 +12,15 @@ return {
 	opts = {
 		keymap = {
 			preset = "default",
-			cmdline = {
-				preset = "default",
-			},
+			["<C-j>"] = { "select_next", "fallback" },
+			["<C-k>"] = { "select_prev", "fallback" },
+		},
+
+		cmdline = {
+			enabled = true,
+			-- preset = "default",
+			-- ["<C-j>"] = { "select_next", "fallback" },
+			-- ["<C-k>"] = { "select_prev", "fallback" },
 		},
 
 		appearance = {
