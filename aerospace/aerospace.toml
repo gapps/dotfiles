@@ -93,12 +93,8 @@ alt-period = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-h = 'focus left'
-# I use alt-j for Contexts, alt-k also works as it loops nodes
-# alt-j = 'focus down'
-# Wanted to use the following in Vim for move up
-# alt-k = 'focus up'
-alt-l = 'focus right'
+# Mnemonic N for Next 
+alt-n = 'focus right --boundaries-action wrap-around-the-workspace'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'

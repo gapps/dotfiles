@@ -6,12 +6,16 @@ return {
 		require("conform").setup({
 			format_on_save = {
 				-- These options will be passed to conform.format()
-				timeout_ms = 500,
+				timeout_ms = 3000,
 				lsp_format = "fallback",
+				async = false,
+				quiet = false,
 			},
 			formatters_by_ft = {
-				ruby = { "rubocop" },
-				eruby = { "erb_format" },
+				-- ruby = { "bundle exec rubocop" },
+				-- ruby = { "" },
+				-- ruby = { "rubocop" },
+				-- eruby = { "erb_format" },
 				go = { "goimports", "gofmt" },
 				lua = { "stylua" },
 				javascript = { "prettierd", "prettier", stop_after_first = true },
@@ -21,7 +25,7 @@ return {
 				yaml = { "prettierd" },
 				-- markdown = { "prettierd" },
 				-- html = { "htmlbeautifier" },
-				tf = { "terraform" },
+				-- tf = { "terraform" },
 			},
 		})
 		vim.keymap.set("n", "<leader>cf", function()

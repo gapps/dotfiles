@@ -16,16 +16,27 @@ return {
 			["<C-k>"] = { "select_prev", "fallback" },
 		},
 
-		cmdline = {
-			enabled = true,
-			-- preset = "default",
-			-- ["<C-j>"] = { "select_next", "fallback" },
-			-- ["<C-k>"] = { "select_prev", "fallback" },
-		},
-
 		appearance = {
 			use_nvim_cmp_as_default = true,
 			nerd_font_variant = "mono",
+		},
+
+		-- Command Line
+		-- Does not show automatically
+		-- Hit Tab to show completion menu
+		-- Tab and S-Tab to move up and down
+		-- Also C-p and C-n
+		-- Also C-j and C-k
+		-- Enter to select and execute
+		-- C-y to accept current selection
+		-- C-e to cancel the completion
+		cmdline = {
+			enabled = true,
+			keymap = {
+				preset = "cmdline",
+				["<C-j>"] = { "select_next", "fallback" },
+				["<C-k>"] = { "select_prev", "fallback" },
+			},
 		},
 
 		completion = {

@@ -42,8 +42,11 @@ export VISUAL="$EDITOR"
 export LESS=-FRX
 
 # Load asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+# This relies on asdf >= 0.16.x which was when they made the conversion to
+# golang.
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
+# export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # Prompt configuration
 # https://github.com/spaceship-prompt/spaceship-prompt
@@ -57,6 +60,8 @@ source $(brew --prefix)/opt/spaceship/spaceship.zsh
 # Add all the extensions provided by Homebrew packages
 # I export fpath so I have access to the fpath value later if investigation is 
 # required.
+# append completions to fpath
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 export fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 # Add extensions from the zsh-completions package
 # https://github.com/zsh-users/zsh-completions
@@ -67,7 +72,8 @@ export fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 # end of the line.
 bindkey "TAB" expand-or-complete-prefix
 # initialize autocompletion
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit
+# autoload -U compinit && compinit
 
 # history setup
 HISTSIZE=5000
