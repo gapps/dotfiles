@@ -8,7 +8,7 @@ return {
 		"giuxtaposition/blink-cmp-copilot",
 	},
 
-	version = "*",
+	version = "1.*",
 	opts = {
 		keymap = {
 			preset = "default",
@@ -75,5 +75,6 @@ return {
 				},
 			},
 		},
+		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
 }
