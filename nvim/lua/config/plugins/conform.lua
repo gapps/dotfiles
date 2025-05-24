@@ -12,6 +12,7 @@ return {
 				quiet = false,
 			},
 			formatters_by_ft = {
+				-- Letting the lsp handle Ruby formatting
 				-- ruby = { "bundle exec rubocop" },
 				-- ruby = { "" },
 				-- ruby = { "rubocop" },
@@ -25,7 +26,7 @@ return {
 				yaml = { "prettierd" },
 				-- markdown = { "prettierd" },
 				-- html = { "htmlbeautifier" },
-				-- tf = { "terraform" },
+				tf = { "terraform" },
 			},
 		})
 		vim.keymap.set("n", "<leader>cf", function()
