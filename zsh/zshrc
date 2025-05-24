@@ -25,6 +25,9 @@ alias gs='git status'
 alias gc='git cat-file -p '
 alias gl='git log --oneline --graph --parents -10'
 alias root='cd $(git rev-parse --show-toplevel)'
+alias k='kubectl'
+alias pods='kubectl get pods'
+alias jobs='kubectl get jobs'
 
 # Update path
 export PATH=~/bin:/opt/homebrew/opt/postgresql@16/bin:/opt/homebrew/sbin:/opt/homebrew/bin:~/go/bin:$PATH
