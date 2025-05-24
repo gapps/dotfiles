@@ -15,6 +15,9 @@ vim.g.maplocalleader = "\\"
 -- Leave insert mode in the terminal
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Exit terminal" })
 
+-- Quick save
+vim.keymap.set("n", "<C-s>", ":w<cr>", { desc = "Save" })
+
 -- Move Lines
 -- copied from Lazyvim
 vim.keymap.set("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
@@ -24,11 +27,15 @@ vim.keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 vim.keymap.set("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
 vim.keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
+-- Split window
+vim.keymap.set("n", "<leader>%", ":vsplit<cr>", { desc = "Vertical Split" })
+-- vim.keymap.set("n", "<leader>s", ":split<cr>", { desc = "Horizontal Split" })
+
 -- Move between windows
-vim.keymap.set("n", "<Left>", "<C-w>h", { desc = "Move to left window" })
+-- vim.keymap.set("n", "<Left>", "<C-w>h", { desc = "Move to left window" })
 -- vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
 -- vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
-vim.keymap.set("n", "<Right>", "<C-w>l", { desc = "Move to right window" })
+-- vim.keymap.set("n", "<Right>", "<C-w>l", { desc = "Move to right window" })
 
 -- move cursor line to center of screen when scrolling down and up
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center" })
