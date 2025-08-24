@@ -15,6 +15,21 @@ Clone the repo to your desired location.
 `cd ~/gapps/repos`\
 `git clone https://github.com/gapps/dotfiles.git`
 
+### Stow
+
+These config files use `stow` to set up links for the configuration.
+
+Install `stow` using `brew install stow`.
+
+I prefer separate configuration directories for each service and you therefore
+need to run `stow` for each service.
+
+## Ghostty Configuration
+
+Run the following command from the root of the cloned repo.
+
+`stow -t ~ -S ghostty --dotfiles`
+
 ## Zsh Setup
 
 ```
