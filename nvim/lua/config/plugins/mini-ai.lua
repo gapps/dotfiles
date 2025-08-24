@@ -5,12 +5,12 @@
 -- `cib` for change inside brackets
 --
 return {
-	{
-		"echasnovski/mini.ai",
-		version = "*",
-		lazy = false,
-		config = function()
-			require("mini.ai").setup()
-		end,
-	},
+  {
+    "echasnovski/mini.ai",
+    version = "*",
+    lazy = false,
+    config = function()
+      require("mini.ai").setup()
+    end,
+  },
 }
