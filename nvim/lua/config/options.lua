@@ -4,7 +4,7 @@
 vim.opt.incsearch = true
 vim.opt.ignorecase = true -- ignore case when searching and completing
 vim.opt.smartcase = true
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 -- :set hlsearch! to toggle within nvim
 vim.opt.inccommand = "split" -- Show substitutions in a split below
 
@@ -13,7 +13,7 @@ vim.opt.cursorline = true -- highlight the current line
 vim.opt.termguicolors = true -- allow 24-bit RGB colors in the TUI
 vim.opt.guicursor = "a:block" -- block cursor in all modes
 vim.opt.number = true -- set numbered lines
-vim.opt.relativenumber = false -- no relative numbering
+vim.opt.relativenumber = true -- no relative numbering
 vim.opt.textwidth = 80 -- text width when wrapping enabled
 vim.opt.colorcolumn = "80" -- visually indicate line width
 vim.opt.signcolumn = "yes" -- show sign column (errors, etc.)
@@ -26,12 +26,12 @@ vim.opt.scrolloff = 2 -- lines above/below when scrolling
 vim.opt.sidescrolloff = 2
 vim.opt.cmdheight = 1 -- space for displaying messages
 vim.opt.listchars = { -- listchars
-	eol = "↲",
-	tab = "» ",
-	nbsp = "␣",
-	trail = "•",
-	extends = "⟩",
-	precedes = "⟨",
+  eol = "↲",
+  tab = "» ",
+  nbsp = "␣",
+  trail = "•",
+  extends = "⟩",
+  precedes = "⟨",
 }
 
 -- Backup
@@ -52,33 +52,5 @@ vim.opt.smarttab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true -- make indenting smarter again
 vim.opt.expandtab = true -- convert tabs to spaces
-vim.opt.tabstop = 4 -- insert 4 spaces for a tab
-vim.opt.softtabstop = 4 -- insert 4 spaces for a tab
-vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
-vim.opt.virtualedit = "block" -- Allow virtual edit in block mode only
-
--- Warnings
-vim.opt.errorbells = false -- turn off audio bell
-vim.opt.visualbell = false -- leave on visual bell
-
--- Windows
-vim.opt.splitbelow = true -- force all horizontal splits to go below current window
-vim.opt.splitright = true -- force all vertical splits to go to the right of current window
-
-vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
---vim.opt.completeopt = { "menuone", "noinsert", noselect" } -- mostly just for cmp, not sure if I need it
-vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
-vim.opt.fileencoding = "utf-8" -- the encoding written to a file
---vim.opt.mouse = "a"                             -- allow the mouse to be used in neovim
-vim.opt.pumheight = 10 -- pop up menu height
-vim.opt.showtabline = 0 -- always show tabs
-vim.opt.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in milliseconds)
-vim.opt.updatetime = 300 -- faster completion (4000ms default)
-vim.opt.laststatus = 3
-vim.opt.ruler = false
-vim.opt.numberwidth = 4 -- set number column width to 2 {default 4}
---vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
-vim.opt.fillchars.eob = " "
---vim.opt.shortmess:append "c"                    -- Don't pass messages to |ins-completion-menu|
-vim.opt.whichwrap:append("<,>,[,],h,l")
+vim.opt.tabstop = 2 -- insert 4 spaces for a t
 vim.opt.iskeyword:append("-")

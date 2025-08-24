@@ -1,12 +1,18 @@
--- https://github.com/catppuccin/nvim
 return {
-	{
-		"catppuccin/nvim",
-		lazy = false,
-		enabled = true,
-		priority = 1000,
-		config = function()
-			vim.cmd.colorscheme("catppuccin-mocha")
-		end,
-	},
+  -- tokyonight
+  -- https://github.com/folke/tokyonight.nvim
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+
+  -- catppuccin
+  -- https://github.com/catppuccin/nvim
+  {
+    "catppuccin/nvim",
+    lazy = false,
+    enabled = true,
+    priority = 1000,
+  },
 }

@@ -16,7 +16,7 @@ vim.g.maplocalleader = "\\"
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Exit terminal" })
 
 -- Quick save
-vim.keymap.set("n", "<C-s>", ":w<cr>", { desc = "Save" })
+-- vim.keymap.set("n", "<C-s>", ":w<cr>", { desc = "Save" })
 
 -- Move Lines
 -- copied from Lazyvim
