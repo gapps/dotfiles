@@ -1,13 +1,21 @@
 # dotfiles
 
-Test commit
-
-My collection of configuration files.
-
-Not everything has made its way in here just yet, but it is happening (albeit
-slowly).
+All configuration files are a mess, mine are no different. Procede at you own
+risk!
 
 ## Installation
+
+### Stow
+
+I use `stow` to set up links for the various configurations.
+
+Install `stow` using `brew install stow`.
+
+I prefer separate configuration directories for each service and you therefore
+need to run `stow` for each service. It's a little more (one-time) overhead, but
+it allows me to customize each machine that I work on.
+
+### Clone the repo
 
 Clone the repo to your desired location.
 
@@ -15,20 +23,30 @@ Clone the repo to your desired location.
 `cd ~/gapps/repos`\
 `git clone https://github.com/gapps/dotfiles.git`
 
-### Stow
+### General Stow Command
 
-These config files use `stow` to set up links for the configuration.
+In general, I use the following format for the `stow` command which is always
+run from the root of the cloned repo.
 
-Install `stow` using `brew install stow`.
+`stow -t ~ -S ghostty --dotfiles`
 
-I prefer separate configuration directories for each service and you therefore
-need to run `stow` for each service.
+The `-t` flag indicates the target directory to create the links in. The default
+is one directory higher, but I like to store my cloned repositories in
+`~/repos/` so I need to specify the target directory.
+
+The `-S` flag indicates the directories to create links for. I usually do them
+one by one, but you could combine them.
+
+The `--dotfiles` flag indicates that files and directories in the repo ane named like
+`dot-somefile` rather than `.somefile`. That's my preference.
 
 ## Ghostty Configuration
 
-Run the following command from the root of the cloned repo.
-
 `stow -t ~ -S ghostty --dotfiles`
+
+## Aerospace Configuration
+
+`stow -t ~ -S aerospace --dotfiles`
 
 ## Zsh Setup
 
