@@ -3,6 +3,8 @@ return {
   "folke/flash.nvim",
   --@type Flash.Config
   opts = {
+    -- Remove q and p to avoid pinky stretch
+    labels = "asdfghjklwertyuiozxcvbnm",
     modes = {
       char = {
         jump_labels = true,
@@ -11,7 +13,8 @@ return {
   },
   keys = {
     {
-      "s",
+      -- "s",
+      "<CR>",
       mode = { "n", "x", "o" },
       function()
         require("flash").jump()

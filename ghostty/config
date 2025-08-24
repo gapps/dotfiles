@@ -1,6 +1,7 @@
 font-size = 18
 copy-on-select = clipboard
-theme=catppuccin-mocha
+#theme=catppuccin-mocha
+theme=tokyonight
 macos-titlebar-style = tabs
 cursor-style = block
 cursor-opacity = 0.5
