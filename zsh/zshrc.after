@@ -1,7 +1,9 @@
 # Private configuration (stuff you do not want in a public repo)
 # This is a template to reference
-# Link to where you store this file from .zshrc.after 
-# ln -s ~/repos/scripts/zshrc.after ~/.zshrc.after
+# Copy this file to your prefered location and link to from ~/.zshrc.after
+# ln -s ~/your/location/zshrc.after ~/.zshrc.after
+# I prefer to just copy this file to ~/.zshrc.after directly and use it in place
+# as it tends to contain stuff you do not want in any repo.
 echo "executing .zshrc.after"
 
 # Your stuff here

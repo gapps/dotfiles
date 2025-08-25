@@ -1,6 +1,6 @@
 # dotfiles
 
-All configuration files are a mess, mine are no different. Procede at you own
+All configuration files are a mess, mine are no different. Proceed at you own
 risk!
 
 ## Installation
