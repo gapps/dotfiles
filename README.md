@@ -60,16 +60,9 @@ Spaceship is used to construct the command prompt in zsh.
 
 ## Zsh Setup
 
-```
-cd
-ln -s gapps/repos/dotfiles/zsh/zshrc .zshrc
-ln -s gapps/repos/dotfiles/zsh/zshrc.after .zshrc.after
-```
+Setup for the zsh shell.
 
-The zshrc.after file is an example file that is empty. This is the file you
-would create for your specific setup on this particular machine. It will contain
-configuration that you likely do not want leaking into the public domain. And,
-obviously, you would create a symbolic link to your own file.
+`stow -t ~ -S zsh --dotfiles`
 
 ## Tmux Setup
 
