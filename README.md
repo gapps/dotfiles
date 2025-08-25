@@ -42,11 +42,21 @@ The `--dotfiles` flag indicates that files and directories in the repo ane named
 
 ## Ghostty Configuration
 
+Ghostty is a terminal.
+
 `stow -t ~ -S ghostty --dotfiles`
 
 ## Aerospace Configuration
 
+Aerospace is a window manager for the Mac.
+
 `stow -t ~ -S aerospace --dotfiles`
+
+## Spaceship Configuration
+
+Spaceship is used to construct the command prompt in zsh.
+
+`stow -t ~ -S spaceship --dotfiles`
 
 ## Zsh Setup
 
