@@ -58,6 +58,12 @@ Spaceship is used to construct the command prompt in zsh.
 
 `stow -t ~ -S spaceship --dotfiles`
 
+## Ranger Configuration
+
+Ranger is used to construct the command prompt in zsh.
+
+`stow -t ~ -S ranger --dotfiles`
+
 ## Zsh Setup
 
 Setup for the zsh shell.
