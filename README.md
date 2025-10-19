@@ -52,6 +52,14 @@ Aerospace is a window manager for the Mac.
 
 `stow -t ~ -S aerospace --dotfiles`
 
+## Atuin Configuration
+
+Atuin is a cli history manager for the shell.
+
+https://github.com/atuinsh/atuin
+
+`stow -t ~ -S atuin --dotfiles`
+
 ## Spaceship Configuration
 
 Spaceship is used to construct the command prompt in zsh.

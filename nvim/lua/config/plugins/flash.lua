@@ -1,6 +1,7 @@
 -- https://github.com/folke/flash.nvim
 return {
   "folke/flash.nvim",
+  lazy = false,
   --@type Flash.Config
   opts = {
     -- Remove q and p to avoid pinky stretch
@@ -14,7 +15,7 @@ return {
   keys = {
     {
       -- "s",
-      "<CR>",
+      "<C-f>",
       mode = { "n", "x", "o" },
       function()
         require("flash").jump()

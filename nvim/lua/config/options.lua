@@ -34,6 +34,9 @@ vim.opt.listchars = { -- listchars
   precedes = "⟨",
 }
 
+-- Cut and paste
+vim.opt.clipboard = "unnamedplus" -- use system clipboard
+
 -- Backup
 vim.opt.swapfile = false -- no swapfile
 vim.opt.backup = false -- no backup file
