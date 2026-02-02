@@ -82,14 +82,14 @@ Setup for the zsh shell.
 
 ```
 cd ~/.config/
-ln -s ~/gapps/repos/dotfiles/tmux tmux
+ln -s ~/repos/dotfiles/tmux tmux
 ```
 
 ## Neovim Setup
 
 ```
 cd ~/.config/
-ln -s ~/gapps/repos/dotfiles/nvim nvim
+ln -s ~/repos/dotfiles/nvim nvim
 ```
 
 ## Bash Setup
