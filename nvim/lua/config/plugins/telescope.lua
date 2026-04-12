@@ -1,34 +1,34 @@
 vim.pack.add({ "https://github.com/nvim-telescope/telescope.nvim" })
 
 require("telescope").setup({
-	defaults = {
+  defaults = {
 
-		prompt_prefix = " ",
-		selection_caret = " ",
-		path_display = { "truncate" },
-		file_ignore_patterns = { ".git/", "node_modules" },
+    prompt_prefix = " ",
+    selection_caret = " ",
+    path_display = { "truncate" },
+    file_ignore_patterns = { ".git/", "node_modules" },
 
-		mappings = {
-			i = {
-				-- Useful Telescope commands that are built in
-				-- Use `C-q` write diagnostics to the quickfix list
-				-- Use `C-p` previous item in list
-				-- Use `C-n` next item in list
+    mappings = {
+      i = {
+        -- Useful Telescope commands that are built in
+        -- Use `C-q` write diagnostics to the quickfix list
+        -- Use `C-p` previous item in list
+        -- Use `C-n` next item in list
 
-				["<Down>"] = require("telescope.actions").cycle_history_next,
-				["<Up>"] = require("telescope.actions").cycle_history_prev,
-				["<C-j>"] = require("telescope.actions").move_selection_next,
-				["<C-k>"] = require("telescope.actions").move_selection_previous,
-				["<C-u>"] = false,
-				["<C-d>"] = false,
-			},
-		},
-	},
-	extensions = {
-		["ui-select"] = {
-			require("telescope.themes").get_dropdown(),
-		},
-	},
+        ["<Down>"] = require("telescope.actions").cycle_history_next,
+        ["<Up>"] = require("telescope.actions").cycle_history_prev,
+        ["<C-j>"] = require("telescope.actions").move_selection_next,
+        ["<C-k>"] = require("telescope.actions").move_selection_previous,
+        ["<C-u>"] = false,
+        ["<C-d>"] = false,
+      },
+    },
+  },
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown(),
+    },
+  },
 })
 
 -- Load extensions
@@ -41,7 +41,7 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find Help" })
 vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Find Keymaps" })
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>fs", function()
-	require("telescope.builtin").find_files({ find_command = { "rg", "--files", "--sortr", "path" } })
+  require("telescope.builtin").find_files({ find_command = { "rg", "--files", "--sortr", "path" } })
 end, { desc = "Find Sorted" })
 vim.keymap.set("n", "<leader>ft", builtin.builtin, { desc = "Find Select Telescope" })
 vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "Find current Word" })
@@ -54,22 +54,22 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find Buffers" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find Buffers" })
 
 vim.keymap.set("n", "<leader>/", function()
-	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-		winblend = 10,
-		previewer = false,
-	}))
+  require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+    winblend = 10,
+    previewer = false,
+  }))
 end, { desc = "Find in current buffer" })
 
 vim.keymap.set("n", "<leader>f/", function()
-	builtin.live_grep({
-		grep_open_files = true,
-		prompt_title = "Live Grep in Open Files",
-	})
+  builtin.live_grep({
+    grep_open_files = true,
+    prompt_title = "Live Grep in Open Files",
+  })
 end, { desc = "Find in Open Files" })
 
 -- Shortcut for searching your neovim configuration files
 vim.keymap.set("n", "<leader>fn", function()
-	builtin.find_files({ cwd = vim.fn.stdpath("config") })
+  builtin.find_files({ cwd = vim.fn.stdpath("config") })
 end, { desc = "Find Neovim files" })
 
 vim.keymap.set("n", "<leader>fv", builtin.git_files, { desc = "Find Version Control Files" })
