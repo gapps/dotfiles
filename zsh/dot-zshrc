@@ -14,6 +14,7 @@ alias lal='eza -la'       # long listing
 # alias g='zoxide'          # g for goto, zoxide is a cd replacement
 alias mkdir='mkdir -pv'   #-p create intermediate dirs
 alias v='nvim'
+alias nv='NVIM_APPNAME=nvim-new nvim'
 alias cp='cp -iv'         #-i prompt to overwrite
 alias mv='mv -iv'         #-i prompt to overwrite
 alias c='clear'
