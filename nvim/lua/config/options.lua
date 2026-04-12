@@ -33,6 +33,7 @@ vim.opt.listchars = { -- listchars
   extends = "⟩",
   precedes = "⟨",
 }
+vim.o.winborder = "rounded" -- global border style for all floating windows
 
 -- Cut and paste
 vim.opt.clipboard = "unnamedplus" -- use system clipboard
